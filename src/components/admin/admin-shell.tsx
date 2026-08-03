@@ -1,14 +1,11 @@
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import {
   IconChartBar,
   IconHome2,
-  IconLogout2,
   IconPackage,
   IconPlus,
   IconSparkles,
 } from "@tabler/icons-react";
-import { clearAdminSession, getAdminSession } from "@/lib/auth/session";
 
 const navigation = [
   { href: "/admin", label: "Dashboard", icon: IconChartBar },
@@ -22,8 +19,6 @@ export async function AdminShell({
 }: {
   children: React.ReactNode;
 }) {
-  const session = await getAdminSession();
-
   return (
     <div className="min-h-screen bg-[linear-gradient(180deg,#eef5ff_0%,#f8fbff_100%)] text-brand-blue-dark">
       <div className="mx-auto grid min-h-screen max-w-[1680px] gap-5 p-3 lg:grid-cols-[300px_minmax(0,1fr)] lg:p-5">
@@ -59,26 +54,10 @@ export async function AdminShell({
 
           <div className="mt-10 rounded-[24px] bg-white/10 p-5 text-sm">
             <div className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-100/70">
-              Sessao atual
+              Painel
             </div>
-            <div className="mt-3 text-lg font-bold">{session?.name ?? "Administrador"}</div>
-            <div className="mt-1 text-blue-100/80">{session?.email ?? "Sessao demonstrativa"}</div>
-            <form
-              action={async () => {
-                "use server";
-                await clearAdminSession();
-                redirect("/admin/login");
-              }}
-              className="mt-5"
-            >
-              <button
-                type="submit"
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/6 px-4 py-2.5 text-xs font-semibold text-white hover:bg-white/10"
-              >
-                <IconLogout2 size={14} />
-                Encerrar sessao
-              </button>
-            </form>
+            <div className="mt-3 text-lg font-bold">Modo publico</div>
+            <div className="mt-1 text-blue-100/80">Area administrativa em preparacao</div>
           </div>
         </aside>
 

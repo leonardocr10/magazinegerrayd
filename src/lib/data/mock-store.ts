@@ -4,6 +4,7 @@ export type StoreProduct = {
   description: string;
   price: number;
   oldPrice: number;
+  affiliateUrl: string;
   marketplace: "Amazon" | "Shopee" | "Mercado Livre" | "Magalu";
   marketplaceSlug: "amazon" | "shopee" | "mercado-livre" | "magalu";
   imageUrl: string;
@@ -23,6 +24,7 @@ export const storeProducts: StoreProduct[] = [
     description: "Som de alta qualidade e conexao estavel.",
     price: 129.9,
     oldPrice: 169.9,
+    affiliateUrl: "https://www.magazineluiza.com.br/",
     marketplace: "Magalu",
     marketplaceSlug: "magalu",
     imageUrl: "/products/fone-h6s.svg",
@@ -38,6 +40,7 @@ export const storeProducts: StoreProduct[] = [
     description: "Mais praticidade e saude no seu dia a dia.",
     price: 299.9,
     oldPrice: 369.9,
+    affiliateUrl: "https://shopee.com.br/",
     marketplace: "Shopee",
     marketplaceSlug: "shopee",
     imageUrl: "/products/air-fryer.svg",
@@ -53,6 +56,7 @@ export const storeProducts: StoreProduct[] = [
     description: "Limpeza pratica e sem esforco.",
     price: 169.9,
     oldPrice: 199.9,
+    affiliateUrl: "https://www.mercadolivre.com.br/",
     marketplace: "Mercado Livre",
     marketplaceSlug: "mercado-livre",
     imageUrl: "/products/mop-flash.svg",
@@ -68,6 +72,7 @@ export const storeProducts: StoreProduct[] = [
     description: "Cabelos lisos e brilhantes todos os dias.",
     price: 119.9,
     oldPrice: 149.9,
+    affiliateUrl: "https://www.amazon.com.br/",
     marketplace: "Amazon",
     marketplaceSlug: "amazon",
     imageUrl: "/products/chapinha.svg",
@@ -83,6 +88,7 @@ export const storeProducts: StoreProduct[] = [
     description: "Com 11 acessorios para reparos do dia a dia.",
     price: 89.9,
     oldPrice: 149.9,
+    affiliateUrl: "https://www.magazineluiza.com.br/",
     marketplace: "Magalu",
     marketplaceSlug: "magalu",
     imageUrl: "/products/parafusadeira.svg",

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { IconHeart } from "@tabler/icons-react";
 import { Badge } from "@/components/ui/badge";
 import { cn, formatPercent, formatPrice } from "@/lib/utils";
@@ -61,15 +60,17 @@ export function ProductCard({ product, compact = false }: ProductCardProps) {
         </div>
 
         <div className="mt-3">
-          <Link
-            href={`/go/${product.id}`}
+          <a
+            href={product.affiliateUrl}
+            target="_blank"
+            rel="noreferrer"
             className={cn(
               "block rounded-full px-4 py-2.5 text-center text-sm font-semibold",
               marketplaceButtonStyles[product.marketplace],
             )}
           >
             Ver oferta na {product.marketplace}
-          </Link>
+          </a>
         </div>
       </div>
     </article>

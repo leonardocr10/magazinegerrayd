@@ -1,19 +1,6 @@
-import { IconLockPassword, IconMail } from "@tabler/icons-react";
-import { loginAdminAction } from "@/app/admin/login/actions";
+import Link from "next/link";
 
-type AdminLoginPageProps = {
-  searchParams: Promise<{ erro?: string }>;
-};
-
-export default async function AdminLoginPage({ searchParams }: AdminLoginPageProps) {
-  const params = await searchParams;
-  const errorMessage =
-    params.erro === "credenciais"
-      ? "Credenciais invalidas. Confira e tente novamente."
-      : params.erro === "validacao"
-        ? "Preencha um e-mail valido e uma senha com pelo menos 8 caracteres."
-        : null;
-
+export default function AdminLoginPage() {
   return (
     <main className="flex min-h-screen items-center justify-center px-4 py-10">
       <div className="surface-card grid w-full max-w-5xl overflow-hidden rounded-[36px] lg:grid-cols-[1.1fr_0.9fr]">
@@ -49,52 +36,25 @@ export default async function AdminLoginPage({ searchParams }: AdminLoginPagePro
 
         <section className="bg-white p-8 lg:p-12">
           <h2 className="section-title text-3xl font-bold text-brand-blue-dark">
-            Entrar no painel
+            Painel em preparacao
           </h2>
           <p className="mt-3 text-sm leading-6 text-brand-text-soft">
-            Use o usuario bootstrap definido nas variaveis de ambiente ou um admin salvo no banco.
+            Nesta primeira publicacao, a area administrativa ficou temporariamente
+            desativada para permitir uma hospedagem estatica gratuita.
           </p>
 
-          {errorMessage ? (
-            <div className="mt-5 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
-              {errorMessage}
-            </div>
-          ) : null}
-
-          <form action={loginAdminAction} className="mt-8 space-y-5">
-            <label className="block">
-              <span className="mb-2 block text-sm font-semibold text-brand-blue-dark">E-mail</span>
-              <div className="flex items-center gap-3 rounded-2xl border border-brand-line px-4 py-3">
-                <IconMail size={18} className="text-brand-text-soft" />
-                <input
-                  name="email"
-                  type="email"
-                  defaultValue="admin@magazinegerrayd.com.br"
-                  className="w-full bg-transparent outline-none"
-                />
-              </div>
-            </label>
-
-            <label className="block">
-              <span className="mb-2 block text-sm font-semibold text-brand-blue-dark">Senha</span>
-              <div className="flex items-center gap-3 rounded-2xl border border-brand-line px-4 py-3">
-                <IconLockPassword size={18} className="text-brand-text-soft" />
-                <input
-                  name="password"
-                  type="password"
-                  defaultValue="TroquePorUmaSenhaSegura123!"
-                  className="w-full bg-transparent outline-none"
-                />
-              </div>
-            </label>
-
-            <button
-              type="submit"
-              className="w-full rounded-full bg-brand-blue px-6 py-4 font-semibold text-white hover:bg-brand-blue-dark"
+          <div className="mt-8 rounded-[28px] border border-[#dce8fb] bg-[#f8fbff] p-6">
+            <p className="text-sm leading-7 text-brand-text-soft">
+              Quando a segunda fase com banco de dados entrar, o login volta aqui com
+              autenticacao real e gerenciamento completo de produtos.
+            </p>
+            <Link
+              href="/admin"
+              className="mt-6 inline-flex rounded-full bg-brand-blue px-6 py-4 font-semibold text-white"
             >
-              Entrar
-            </button>
-          </form>
+              Voltar para a visao geral
+            </Link>
+          </div>
         </section>
       </div>
     </main>
