@@ -4,7 +4,7 @@ import { SESSION_COOKIE } from "@/lib/auth/session";
 
 const publicAdminPaths = new Set(["/admin/login"]);
 
-export function proxy(request: NextRequest) {
+export function middleware(request: NextRequest) {
   if (!request.nextUrl.pathname.startsWith("/admin")) {
     return NextResponse.next();
   }

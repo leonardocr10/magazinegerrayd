@@ -35,7 +35,7 @@ src/
     validation/
 docker-compose.yml
 .env.example
-proxy.ts
+middleware.ts
 ```
 
 ## Ordem de implementacao desta fase
