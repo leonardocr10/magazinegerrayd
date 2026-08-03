@@ -5,6 +5,17 @@ import { storeProducts } from "@/lib/data/mock-store";
 import { slugify } from "@/lib/utils";
 import { manualProductSchema } from "@/lib/validation/product";
 
+type AdminProductRow = {
+  id: string;
+  name: string;
+  marketplace?: { name?: string | null } | null;
+  offers: Array<{ currentPrice?: number | string | null }>;
+  status: string;
+  featured?: boolean | null;
+  dailyOffer?: boolean | null;
+  gerraydChoice?: boolean | null;
+};
+
 export async function getDashboardSummary() {
   try {
     const [products, activeProducts, clicks] = await Promise.all([
@@ -33,7 +44,7 @@ export async function getDashboardSummary() {
 
 export async function getAdminProducts() {
   try {
-    const products = await prisma.product.findMany({
+    const products = (await prisma.product.findMany({
       orderBy: { createdAt: "desc" },
       take: 12,
       include: {
@@ -43,7 +54,7 @@ export async function getAdminProducts() {
           take: 1,
         },
       },
-    });
+    })) as AdminProductRow[];
 
     return products.map((product) => ({
       id: product.id,

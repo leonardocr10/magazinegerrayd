@@ -1,20 +1,33 @@
-import "dotenv/config";
-import { PrismaPg } from "@prisma/adapter-pg";
-import { PrismaClient } from "@/generated/prisma/client";
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type PrismaStub = any;
 
-const adapter = new PrismaPg({
-  connectionString: process.env.DATABASE_URL!,
-});
+function createUnavailableDatabaseClient(path = "prisma"): PrismaStub {
+  return new Proxy(
+    {},
+    {
+      get(_target, property) {
+        const nextPath = `${path}.${String(property)}`;
 
-declare global {
-  var prisma: PrismaClient | undefined;
+        return new Proxy(() => {
+          throw new Error(`Database client unavailable: ${nextPath}`);
+        }, {
+          get() {
+            return createUnavailableDatabaseClient(nextPath);
+          },
+          apply() {
+            throw new Error(`Database client unavailable: ${nextPath}`);
+          },
+        });
+      },
+    },
+  ) as PrismaStub;
 }
 
-export const prisma =
-  global.prisma ??
-  new PrismaClient({
-    adapter,
-  });
+declare global {
+  var prisma: PrismaStub | undefined;
+}
+
+export const prisma = global.prisma ?? createUnavailableDatabaseClient();
 
 if (process.env.NODE_ENV !== "production") {
   global.prisma = prisma;
