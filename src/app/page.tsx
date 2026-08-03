@@ -2,10 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   IconArrowRight,
+  IconBadge,
+  IconBellRinging,
   IconBrandWhatsapp,
-  IconDiscount2,
-  IconHeadset,
+  IconClockBolt,
+  IconCreditCard,
+  IconGift,
+  IconLockCheck,
+  IconSearch,
   IconShieldCheck,
+  IconSparkles,
   IconTruckDelivery,
 } from "@tabler/icons-react";
 import { PartnerCard } from "@/components/store/partner-card";
@@ -13,20 +19,62 @@ import { PartnerCard } from "@/components/store/partner-card";
 const whatsappGroupUrl =
   "https://chat.whatsapp.com/Kh6OdjRatwO8xiE12GJTYf?s=sw&p=a&mlu=4";
 
-const serviceCards = [
+const highlights = [
+  "Ofertas selecionadas com leitura rapida",
+  "Links para lojas conhecidas e confiaveis",
+  "Grupo com avisos e oportunidades recorrentes",
+];
+
+const benefitCards = [
   {
-    title: "Ofertas filtradas",
-    text: "Selecionamos oportunidades com mais clareza para voce bater o olho e entender rapido se vale a pena.",
-    icon: IconDiscount2,
+    title: "Curadoria mais clara",
+    text: "Voce nao perde tempo com excesso de informacao. A vitrine foca no que vale abrir e acompanhar.",
+    icon: IconSearch,
   },
   {
-    title: "Compra com suporte",
-    text: "O projeto reforca confianca e orientacao para que a compra aconteca com mais seguranca do inicio ao fim.",
-    icon: IconHeadset,
+    title: "Compra mais segura",
+    text: "A comunicacao prioriza lojas conhecidas, leitura objetiva e orientacao para comprar com mais confianca.",
+    icon: IconShieldCheck,
   },
   {
-    title: "Entrega e retirada",
-    text: "Avaliamos cenarios que fazem sentido no frete, na retirada e no custo final da compra.",
+    title: "Alertas mais rapidos",
+    text: "O grupo ajuda a acompanhar oportunidades, descontos e avisos de produtos que podem acabar rapido.",
+    icon: IconBellRinging,
+  },
+];
+
+const steps = [
+  {
+    title: "Entre no grupo",
+    text: "Acesse o canal oficial para receber os avisos e acompanhar as oportunidades selecionadas.",
+    icon: IconBrandWhatsapp,
+  },
+  {
+    title: "Veja o destaque do dia",
+    text: "As melhores oportunidades ficam mais faceis de identificar, com visual direto e leitura leve.",
+    icon: IconSparkles,
+  },
+  {
+    title: "Abra o parceiro",
+    text: "Quando fizer sentido, voce segue para a loja parceira e finaliza a compra no ambiente oficial.",
+    icon: IconLockCheck,
+  },
+];
+
+const trustItems = [
+  {
+    title: "Lojas conhecidas",
+    text: "Amazon, Shopee, Mercado Livre e Magalu aparecem como referencias visuais da proposta.",
+    icon: IconBadge,
+  },
+  {
+    title: "Leitura objetiva",
+    text: "Layout pensado para o cliente entender a proposta em poucos segundos.",
+    icon: IconClockBolt,
+  },
+  {
+    title: "Economia e praticidade",
+    text: "Foco em promocoes, cupons, frete, retirada e percepcao de valor antes da compra.",
     icon: IconTruckDelivery,
   },
 ];
@@ -34,27 +82,35 @@ const serviceCards = [
 export default function HomePage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#071227] text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(29,114,255,0.16),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(37,197,255,0.14),transparent_32%),linear-gradient(180deg,#071227_0%,#09152b_52%,#08121f_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(31,120,255,0.18),transparent_30%),radial-gradient(circle_at_center_right,rgba(0,205,255,0.12),transparent_24%),radial-gradient(circle_at_bottom_left,rgba(255,192,54,0.08),transparent_26%),linear-gradient(180deg,#071227_0%,#08152a_46%,#08111d_100%)]" />
 
       <div className="relative">
         <header className="border-b border-white/8">
           <div className="mx-auto flex w-full max-w-[1240px] items-center justify-between gap-4 px-5 py-5 md:px-8">
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="flex items-center gap-3">
               <Image
                 src="/brand/logo-real.jpg"
                 alt="Magazine Gerrayd"
                 width={1079}
                 height={1079}
                 priority
-                className="h-[78px] w-[78px] rounded-[18px] border border-white/10 object-cover shadow-[0_14px_30px_rgba(0,0,0,0.28)] md:h-[92px] md:w-[92px]"
+                className="h-[72px] w-[72px] rounded-[18px] border border-white/10 object-cover shadow-[0_14px_30px_rgba(0,0,0,0.28)] md:h-[86px] md:w-[86px]"
               />
+              <div className="hidden md:block">
+                <div className="text-sm font-semibold uppercase tracking-[0.18em] text-[#7eb6ff]">
+                  Magazine Gerrayd
+                </div>
+                <div className="mt-1 text-sm text-[#a8bddf]">
+                  Ofertas selecionadas para comprar melhor
+                </div>
+              </div>
             </Link>
 
             <Link
               href={whatsappGroupUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[linear-gradient(90deg,#17d868_0%,#33e6b9_100%)] px-5 py-3 text-sm font-black uppercase tracking-[0.05em] text-[#051d10] shadow-[0_10px_30px_rgba(23,216,104,0.2)]"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[linear-gradient(90deg,#17d868_0%,#33e6b9_100%)] px-5 py-3 text-sm font-black uppercase tracking-[0.05em] text-[#051d10] shadow-[0_10px_30px_rgba(23,216,104,0.22)]"
             >
               <IconBrandWhatsapp size={20} stroke={2.3} />
               Entrar no grupo
@@ -62,32 +118,44 @@ export default function HomePage() {
           </div>
         </header>
 
-        <section className="mx-auto w-full max-w-[1240px] px-5 pb-10 pt-8 md:px-8 md:pb-14 md:pt-10">
-          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-            <div className="max-w-[640px]">
+        <section className="mx-auto w-full max-w-[1240px] px-5 pb-14 pt-8 md:px-8 md:pb-20 md:pt-12">
+          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <div className="max-w-[680px]">
               <div className="inline-flex items-center gap-2 rounded-full border border-[#224e99] bg-[#0b1d40] px-4 py-2 text-sm font-semibold text-[#9bc1ff]">
                 <span className="h-2.5 w-2.5 rounded-full bg-[#ffcf48]" />
-                Plataformas de ofertas selecionadas
+                Landing page oficial do Magazine Gerrayd
               </div>
 
-              <h1 className="section-title mt-6 text-[38px] font-black leading-[1.02] tracking-[-0.05em] text-white md:text-[58px]">
-                As melhores oportunidades
-                <span className="block bg-[linear-gradient(90deg,#ffffff_0%,#78c7ff_48%,#37deff_100%)] bg-clip-text text-transparent">
-                  para comprar melhor com o Gerrayd
+              <h1 className="section-title mt-6 text-[40px] font-black leading-[0.98] tracking-[-0.06em] text-white md:text-[68px]">
+                Promocoes, cupons e
+                <span className="block bg-[linear-gradient(90deg,#ffffff_0%,#8cc7ff_42%,#39deff_100%)] bg-clip-text text-transparent">
+                  oportunidades em um so lugar
                 </span>
               </h1>
 
-              <p className="mt-5 max-w-[560px] text-[17px] leading-8 text-[#a8bddf] md:text-[18px]">
-                Ofertas selecionadas com foco em economia real, parceiros confiaveis e
-                acesso rapido ao grupo para acompanhar promocoes, cupons e novidades.
+              <p className="mt-5 max-w-[610px] text-[17px] leading-8 text-[#a8bddf] md:text-[19px]">
+                Uma pagina direta para apresentar o Magazine Gerrayd, destacar os
+                parceiros certos e levar o visitante para o grupo oficial com mais
+                clareza, confianca e conversao.
               </p>
+
+              <div className="mt-7 flex flex-wrap gap-3">
+                {highlights.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-full border border-[#214479] bg-[#0b1a34]/90 px-4 py-2 text-sm font-medium text-[#dce8ff]"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Link
                   href={whatsappGroupUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-3 rounded-[18px] bg-[linear-gradient(90deg,#155dff_0%,#24bbff_100%)] px-7 py-4 text-[15px] font-black uppercase tracking-[0.05em] text-white shadow-[0_18px_40px_rgba(21,93,255,0.24)] hover:translate-y-[-1px]"
+                  className="inline-flex items-center justify-center gap-3 rounded-[18px] bg-[linear-gradient(90deg,#155dff_0%,#24bbff_100%)] px-7 py-4 text-[15px] font-black uppercase tracking-[0.05em] text-white shadow-[0_18px_40px_rgba(21,93,255,0.24)]"
                 >
                   Receber ofertas agora
                   <IconArrowRight size={19} />
@@ -101,20 +169,42 @@ export default function HomePage() {
                 </a>
               </div>
 
-              <div className="mt-8 flex items-start gap-3 rounded-[22px] border border-[#1d3d73] bg-[#09182f]/88 px-4 py-4">
-                <IconShieldCheck size={22} className="mt-0.5 text-[#ffcf48]" />
-                <p className="text-sm leading-7 text-[#a8bddf]">
-                  A proposta aqui e simples: visual bonito, leitura mais leve e foco em
-                  compra segura, selecao confiavel e economia real.
-                </p>
+              <div className="mt-8 grid gap-4 md:grid-cols-3">
+                <div className="rounded-[24px] border border-[#1a3663] bg-[#09182f]/88 p-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#12356a] text-[#ffcf48]">
+                    <IconGift size={24} />
+                  </div>
+                  <div className="mt-4 text-lg font-black text-white">Ofertas relevantes</div>
+                  <div className="mt-2 text-sm leading-7 text-[#a8bddf]">
+                    Menos ruido e mais foco no que chama atencao de verdade.
+                  </div>
+                </div>
+                <div className="rounded-[24px] border border-[#1a3663] bg-[#09182f]/88 p-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#12356a] text-[#ffcf48]">
+                    <IconCreditCard size={24} />
+                  </div>
+                  <div className="mt-4 text-lg font-black text-white">Compra orientada</div>
+                  <div className="mt-2 text-sm leading-7 text-[#a8bddf]">
+                    Comunicacao feita para reduzir duvida e facilitar a decisao.
+                  </div>
+                </div>
+                <div className="rounded-[24px] border border-[#1a3663] bg-[#09182f]/88 p-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#12356a] text-[#ffcf48]">
+                    <IconLockCheck size={24} />
+                  </div>
+                  <div className="mt-4 text-lg font-black text-white">Parceiros fortes</div>
+                  <div className="mt-2 text-sm leading-7 text-[#a8bddf]">
+                    Visual alinhado com marketplaces conhecidos pelo publico.
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="relative lg:self-end">
+            <div className="relative">
               <div className="absolute left-10 top-10 h-44 w-44 rounded-full bg-[#1585ff]/18 blur-3xl" />
               <div className="absolute bottom-8 right-10 h-40 w-40 rounded-full bg-[#2be1ff]/14 blur-3xl" />
 
-              <div className="relative overflow-hidden rounded-[34px] border border-[#274f92] bg-[radial-gradient(circle_at_top,rgba(47,140,255,0.18),transparent_26%),linear-gradient(145deg,#0b2451_0%,#0a1d3f_58%,#09162d_100%)] px-6 pt-6 shadow-[0_24px_70px_rgba(0,0,0,0.28)] md:px-8 md:pt-8 lg:mt-10">
+              <div className="relative overflow-hidden rounded-[36px] border border-[#274f92] bg-[radial-gradient(circle_at_top,rgba(47,140,255,0.18),transparent_28%),linear-gradient(145deg,#0b2451_0%,#0a1d3f_58%,#09162d_100%)] px-6 pt-6 shadow-[0_24px_70px_rgba(0,0,0,0.28)] md:px-8 md:pt-8">
                 <div className="absolute left-0 top-0 h-24 w-24 rounded-br-[40px] bg-[linear-gradient(180deg,rgba(255,207,72,0.34),rgba(255,207,72,0.02))]" />
                 <Image
                   src="/brand/gerrayd-character.png"
@@ -129,19 +219,38 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section className="mx-auto w-full max-w-[1240px] px-5 pb-8 md:px-8 md:pb-12">
+          <div className="grid gap-4 lg:grid-cols-3">
+            {benefitCards.map(({ title, text, icon: Icon }) => (
+              <article
+                key={title}
+                className="rounded-[28px] border border-[#18335f] bg-[linear-gradient(180deg,rgba(9,23,48,0.94)_0%,rgba(8,18,35,0.98)_100%)] p-6 shadow-[0_14px_34px_rgba(0,0,0,0.16)]"
+              >
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[linear-gradient(180deg,#1657da_0%,#103f9f_100%)] text-[#ffcf48] shadow-[0_10px_24px_rgba(22,87,218,0.2)]">
+                  <Icon size={26} stroke={2.1} />
+                </div>
+                <h2 className="mt-5 text-[24px] font-black text-white">{title}</h2>
+                <p className="mt-3 text-[15px] leading-7 text-[#a8bddf]">{text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section
           id="parceiros"
-          className="mx-auto w-full max-w-[1240px] px-5 pb-8 md:px-8 md:pb-12"
+          className="mx-auto w-full max-w-[1240px] px-5 pb-8 pt-4 md:px-8 md:pb-14"
         >
-          <div className="mb-5 flex items-end justify-between gap-4">
-            <div>
-              <p className="text-sm font-black uppercase tracking-[0.18em] text-[#37deff]">
-                Parceiros em destaque
-              </p>
-              <h2 className="section-title mt-2 text-[30px] font-black tracking-[-0.04em] text-white md:text-[40px]">
-                Compre nas principais lojas parceiras
-              </h2>
-            </div>
+          <div className="mb-6 max-w-[760px]">
+            <p className="text-sm font-black uppercase tracking-[0.18em] text-[#37deff]">
+              Parceiros visuais
+            </p>
+            <h2 className="section-title mt-2 text-[32px] font-black tracking-[-0.04em] text-white md:text-[46px]">
+              A pagina comunica o projeto com marcas conhecidas pelo publico
+            </h2>
+            <p className="mt-4 text-[16px] leading-8 text-[#a8bddf]">
+              A proposta da landing e apresentar o Magazine Gerrayd com cara de marca
+              forte, visual profissional e CTA direto para o grupo.
+            </p>
           </div>
 
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -152,20 +261,48 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="mx-auto w-full max-w-[1240px] px-5 pb-12 md:px-8 md:pb-16">
+        <section className="mx-auto w-full max-w-[1240px] px-5 pb-8 md:px-8 md:pb-14">
+          <div className="rounded-[34px] border border-[#1d3f74] bg-[linear-gradient(135deg,#0b1d3c_0%,#0a1730_100%)] px-6 py-8 md:px-8 md:py-10">
+            <div className="max-w-[740px]">
+              <p className="text-sm font-black uppercase tracking-[0.18em] text-[#ffcf48]">
+                Como funciona
+              </p>
+              <h2 className="section-title mt-3 text-[32px] font-black tracking-[-0.04em] text-white md:text-[44px]">
+                Um fluxo simples para levar o visitante da descoberta ate a acao
+              </h2>
+            </div>
+
+            <div className="mt-8 grid gap-4 lg:grid-cols-3">
+              {steps.map(({ title, text, icon: Icon }) => (
+                <article
+                  key={title}
+                  className="rounded-[26px] border border-[#234575] bg-[#0a1a34]/90 p-5"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#12356a] text-[#6fd2ff]">
+                    <Icon size={24} />
+                  </div>
+                  <h3 className="mt-4 text-[22px] font-black text-white">{title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-[#a8bddf]">{text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="mx-auto w-full max-w-[1240px] px-5 pb-8 md:px-8 md:pb-14">
           <div className="grid gap-4 lg:grid-cols-3">
-            {serviceCards.map(({ title, text, icon: Icon }) => (
+            {trustItems.map(({ title, text, icon: Icon }) => (
               <article
                 key={title}
-                className="rounded-[28px] border border-[#1b3664] bg-[linear-gradient(180deg,rgba(9,23,48,0.94)_0%,rgba(8,18,35,0.98)_100%)] p-6 shadow-[0_14px_34px_rgba(0,0,0,0.16)]"
+                className="rounded-[26px] border border-[#18335f] bg-[#09172c]/90 p-5"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[linear-gradient(180deg,#1657da_0%,#103f9f_100%)] text-[#ffcf48] shadow-[0_10px_24px_rgba(22,87,218,0.2)]">
-                    <Icon size={26} stroke={2.1} />
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#12356a] text-[#ffcf48]">
+                    <Icon size={24} />
                   </div>
                   <div>
                     <h3 className="text-[22px] font-black text-white">{title}</h3>
-                    <p className="mt-2 text-[15px] leading-7 text-[#a8bddf]">{text}</p>
+                    <p className="mt-2 text-sm leading-7 text-[#a8bddf]">{text}</p>
                   </div>
                 </div>
               </article>
@@ -174,18 +311,18 @@ export default function HomePage() {
         </section>
 
         <section className="mx-auto w-full max-w-[1240px] px-5 pb-20 md:px-8">
-          <div className="overflow-hidden rounded-[34px] border border-[#234b8f] bg-[linear-gradient(135deg,#0d2450_0%,#0b1830_44%,#081321_100%)] px-6 py-10 md:px-10 md:py-12">
+          <div className="overflow-hidden rounded-[36px] border border-[#234b8f] bg-[linear-gradient(135deg,#0f2b5f_0%,#0b1830_44%,#081321_100%)] px-6 py-10 shadow-[0_24px_70px_rgba(0,0,0,0.22)] md:px-10 md:py-12">
             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-              <div>
+              <div className="max-w-[720px]">
                 <p className="text-sm font-black uppercase tracking-[0.18em] text-[#ffcf48]">
-                  Magazine Gerrayd
+                  CTA principal
                 </p>
-                <h2 className="section-title mt-4 max-w-[720px] text-[34px] font-black leading-[1.04] tracking-[-0.05em] text-white md:text-[50px]">
-                  Receba ofertas selecionadas com mais clareza, seguranca e agilidade.
+                <h2 className="section-title mt-4 text-[36px] font-black leading-[1.04] tracking-[-0.05em] text-white md:text-[54px]">
+                  Coloque o Magazine Gerrayd no centro da sua captacao.
                 </h2>
-                <p className="mt-4 max-w-[620px] text-[16px] leading-8 text-[#a8bddf]">
-                  Entre no grupo oficial e acompanhe oportunidades em marketplaces
-                  conhecidos, com uma apresentacao direta e facil de entender.
+                <p className="mt-4 text-[16px] leading-8 text-[#a8bddf]">
+                  Uma landing page pensada para apresentar a marca com mais valor
+                  percebido e direcionar o publico para o grupo oficial.
                 </p>
               </div>
 
@@ -196,7 +333,7 @@ export default function HomePage() {
                 className="inline-flex items-center justify-center gap-3 rounded-[18px] bg-[linear-gradient(90deg,#17d868_0%,#33e6b9_100%)] px-7 py-5 text-[15px] font-black uppercase tracking-[0.05em] text-[#051d10] shadow-[0_16px_34px_rgba(23,216,104,0.2)]"
               >
                 <IconBrandWhatsapp size={22} stroke={2.2} />
-                Entrar no grupo
+                Entrar no grupo agora
               </Link>
             </div>
           </div>

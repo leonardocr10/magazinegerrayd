@@ -15,15 +15,15 @@ const sora = Sora({
 export const metadata: Metadata = {
   metadataBase: new URL("https://magazinegerrayd.com.br"),
   title: {
-    default: "Magazine Gerrayd | As melhores ofertas em um so lugar",
+    default: "Magazine Gerrayd | Landing page oficial",
     template: "%s | Magazine Gerrayd",
   },
   description:
-    "Plataforma de ofertas afiliadas do Magazine Gerrayd com achadinhos, cupons e produtos selecionados da Amazon, Shopee, Mercado Livre e Magalu.",
+    "Landing page oficial do Magazine Gerrayd com foco em ofertas selecionadas, parceiros conhecidos e acesso rapido ao grupo oficial.",
   openGraph: {
     title: "Magazine Gerrayd",
     description:
-      "As melhores ofertas em um so lugar, com curadoria e atualizacao frequente.",
+      "Landing page oficial com parceiros conhecidos, proposta clara e CTA direto para o grupo.",
     siteName: "Magazine Gerrayd",
     locale: "pt_BR",
     type: "website",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Magazine Gerrayd",
     description:
-      "Achadinhos, cupons e ofertas selecionadas com foco em economia e confianca.",
+      "Landing page com foco em conversao, confianca e apresentacao clara do Magazine Gerrayd.",
   },
 };
 
