@@ -32,9 +32,9 @@ const showcaseProducts = [
     accent: "bg-[#123a5d]",
   },
   {
-    title: "Micro-ondas embutido",
-    subtitle: "Mais rapidez para sua rotina",
-    image: "/hero/microondas-embutido.jpg",
+    title: "Sofa para sala",
+    subtitle: "Mais conforto para o seu ambiente",
+    image: "/hero/sofa-sala.jpg",
     accent: "bg-[#3c284a]",
   },
 ];
