@@ -116,7 +116,7 @@ export default function HomePage() {
 
       <div className="relative">
         <header className="border-b border-white/8">
-          <div className="mx-auto flex w-full max-w-[1240px] items-center justify-between gap-4 px-5 py-5 md:px-8">
+          <div className="flex w-full items-center justify-between gap-4 px-5 py-5 md:px-8 xl:px-12 2xl:px-16">
             <Link href="/" className="flex items-center gap-3">
               <Image
                 src="/brand/logo-real.jpg"
@@ -148,22 +148,17 @@ export default function HomePage() {
           </div>
         </header>
 
-        <section className="mx-auto w-full max-w-[1240px] px-5 pb-14 pt-8 md:px-8 md:pb-20 md:pt-12">
-          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-            <div className="max-w-[680px]">
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#224e99] bg-[#0b1d40] px-4 py-2 text-sm font-semibold text-[#9bc1ff]">
-                <span className="h-2.5 w-2.5 rounded-full bg-[#ffcf48]" />
-                Landing page oficial do Magazine Gerrayd
-              </div>
-
-              <h1 className="section-title mt-6 text-[40px] font-black leading-[0.98] tracking-[-0.06em] text-white md:text-[68px]">
+        <section className="w-full px-5 pb-14 pt-8 md:px-8 md:pb-20 md:pt-12 xl:px-12 2xl:px-16">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.12fr)_minmax(420px,0.88fr)] lg:items-center xl:gap-14">
+            <div className="max-w-[820px]">
+              <h1 className="section-title text-[40px] font-black leading-[0.98] tracking-[-0.06em] text-white md:text-[68px] xl:text-[78px]">
                 Promocoes, cupons e
                 <span className="block bg-[linear-gradient(90deg,#ffffff_0%,#8cc7ff_42%,#39deff_100%)] bg-clip-text text-transparent">
                   oportunidades em um so lugar
                 </span>
               </h1>
 
-              <p className="mt-5 max-w-[610px] text-[17px] leading-8 text-[#a8bddf] md:text-[19px]">
+              <p className="mt-5 max-w-[720px] text-[17px] leading-8 text-[#a8bddf] md:text-[19px] xl:text-[20px]">
                 Uma pagina direta para apresentar o Magazine Gerrayd, destacar os
                 parceiros certos e levar o visitante para o grupo oficial com mais
                 clareza, confianca e conversao.
@@ -199,7 +194,7 @@ export default function HomePage() {
                 </a>
               </div>
 
-              <div className="mt-8 grid gap-4 md:grid-cols-3">
+              <div className="mt-8 grid gap-4 md:grid-cols-3 xl:max-w-[920px]">
                 <div className="rounded-[24px] border border-[#1a3663] bg-[#09182f]/88 p-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#12356a] text-[#ffcf48]">
                     <IconGift size={24} />
@@ -230,11 +225,11 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative min-h-[620px]">
               <div className="absolute left-10 top-10 h-44 w-44 rounded-full bg-[#1585ff]/18 blur-3xl" />
               <div className="absolute bottom-8 right-10 h-40 w-40 rounded-full bg-[#2be1ff]/14 blur-3xl" />
 
-              <div className="relative overflow-hidden rounded-[36px] border border-[#274f92] bg-[radial-gradient(circle_at_top,rgba(47,140,255,0.18),transparent_28%),linear-gradient(145deg,#0b2451_0%,#0a1d3f_58%,#09162d_100%)] px-6 pt-6 shadow-[0_24px_70px_rgba(0,0,0,0.28)] md:px-8 md:pt-8">
+              <div className="relative overflow-hidden rounded-[36px] border border-[#274f92] bg-[radial-gradient(circle_at_top,rgba(47,140,255,0.18),transparent_28%),linear-gradient(145deg,#0b2451_0%,#0a1d3f_58%,#09162d_100%)] px-6 pt-6 shadow-[0_24px_70px_rgba(0,0,0,0.28)] md:px-8 md:pt-8 xl:min-h-[620px]">
                 <div className="absolute left-0 top-0 h-24 w-24 rounded-br-[40px] bg-[linear-gradient(180deg,rgba(255,207,72,0.34),rgba(255,207,72,0.02))]" />
                 <div className="pointer-events-none absolute inset-0">
                   <div className="absolute left-[18%] top-[14%] h-28 w-28 rounded-full border border-white/8 bg-white/4 blur-[2px]" />
@@ -271,7 +266,7 @@ export default function HomePage() {
                   width={1024}
                   height={1536}
                   priority
-                  className="relative z-10 mx-auto h-auto w-full max-w-[360px] object-contain object-bottom drop-shadow-[0_22px_42px_rgba(0,0,0,0.34)]"
+                  className="relative z-10 mx-auto h-auto w-full max-w-[400px] object-contain object-bottom drop-shadow-[0_22px_42px_rgba(0,0,0,0.34)] xl:max-w-[460px]"
                 />
               </div>
 
@@ -307,7 +302,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="mx-auto w-full max-w-[1240px] px-5 pb-8 md:px-8 md:pb-12">
+        <section className="w-full px-5 pb-8 md:px-8 md:pb-12 xl:px-12 2xl:px-16">
           <div className="grid gap-4 lg:grid-cols-3">
             {benefitCards.map(({ title, text, icon: Icon }) => (
               <article
@@ -326,7 +321,7 @@ export default function HomePage() {
 
         <section
           id="parceiros"
-          className="mx-auto w-full max-w-[1240px] px-5 pb-8 pt-4 md:px-8 md:pb-14"
+          className="w-full px-5 pb-8 pt-4 md:px-8 md:pb-14 xl:px-12 2xl:px-16"
         >
           <div className="mb-6 max-w-[760px]">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-[#37deff]">
@@ -349,7 +344,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="mx-auto w-full max-w-[1240px] px-5 pb-8 md:px-8 md:pb-14">
+        <section className="w-full px-5 pb-8 md:px-8 md:pb-14 xl:px-12 2xl:px-16">
           <div className="rounded-[34px] border border-[#1d3f74] bg-[linear-gradient(135deg,#0b1d3c_0%,#0a1730_100%)] px-6 py-8 md:px-8 md:py-10">
             <div className="max-w-[740px]">
               <p className="text-sm font-black uppercase tracking-[0.18em] text-[#ffcf48]">
@@ -377,7 +372,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="mx-auto w-full max-w-[1240px] px-5 pb-8 md:px-8 md:pb-14">
+        <section className="w-full px-5 pb-8 md:px-8 md:pb-14 xl:px-12 2xl:px-16">
           <div className="grid gap-4 lg:grid-cols-3">
             {trustItems.map(({ title, text, icon: Icon }) => (
               <article
@@ -398,7 +393,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="mx-auto w-full max-w-[1240px] px-5 pb-20 md:px-8">
+        <section className="w-full px-5 pb-20 md:px-8 xl:px-12 2xl:px-16">
           <div className="overflow-hidden rounded-[36px] border border-[#234b8f] bg-[linear-gradient(135deg,#0f2b5f_0%,#0b1830_44%,#081321_100%)] px-6 py-10 shadow-[0_24px_70px_rgba(0,0,0,0.22)] md:px-10 md:py-12">
             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
               <div className="max-w-[720px]">
