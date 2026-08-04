@@ -81,28 +81,28 @@ const trustItems = [
 
 const heroProducts = [
   {
-    title: "Air Fryer Mondial",
-    price: "R$ 299,90",
-    badge: "-18%",
-    image: "/products/air-fryer.svg",
+    title: "Cozinha planejada",
+    price: "Eletros em destaque",
+    badge: "COZINHA",
+    image: "/hero/cozinha-appliances.jpg",
     position:
       "left-[-10px] top-[26px] md:left-[-24px] md:top-[40px] lg:left-[-54px]",
     cardTone: "from-[#0d1e3e] to-[#122f63]",
   },
   {
-    title: "Mop Flash Limp",
-    price: "R$ 169,90",
-    badge: "-15%",
-    image: "/products/mop-flash.svg",
+    title: "Smart TV para sala",
+    price: "Ofertas para sua casa",
+    badge: "TV",
+    image: "/hero/smart-tv-room.jpg",
     position:
       "right-[-10px] top-[120px] md:right-[-28px] md:top-[148px] lg:right-[-54px]",
     cardTone: "from-[#0e213f] to-[#0f3d5d]",
   },
   {
-    title: "Chapinha Philco",
-    price: "R$ 119,90",
-    badge: "-20%",
-    image: "/products/chapinha.svg",
+    title: "Micro-ondas embutido",
+    price: "Mais praticidade",
+    badge: "MICRO",
+    image: "/hero/microondas-embutido.jpg",
     position:
       "left-[16px] bottom-[18px] md:left-[22px] md:bottom-[30px] lg:left-[-6px]",
     cardTone: "from-[#101d37] to-[#3a2347]",
@@ -159,9 +159,9 @@ export default function HomePage() {
               </h1>
 
               <p className="mt-5 max-w-[720px] text-[17px] leading-8 text-[#a8bddf] md:text-[19px] xl:text-[20px]">
-                Uma pagina direta para apresentar o Magazine Gerrayd, destacar os
-                parceiros certos e levar o visitante para o grupo oficial com mais
-                clareza, confianca e conversao.
+                Acompanhe ofertas, cupons e achadinhos selecionados para ajudar voce
+                a economizar em produtos de lojas conhecidas, com mais praticidade no
+                dia a dia.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3">
@@ -236,28 +236,28 @@ export default function HomePage() {
                   <div className="absolute right-[14%] top-[8%] h-36 w-36 rounded-full border border-[#66bfff]/10 bg-[#66bfff]/6 blur-[2px]" />
                   <div className="absolute bottom-[10%] right-[12%] h-24 w-24 rounded-full border border-[#ffcf48]/10 bg-[#ffcf48]/6 blur-[2px]" />
                   <Image
-                    src="/products/air-fryer.svg"
+                    src="/hero/cozinha-appliances.jpg"
                     alt=""
                     width={190}
                     height={190}
                     aria-hidden="true"
-                    className="absolute left-[2%] top-[8%] hidden rotate-[-12deg] opacity-[0.12] md:block"
+                    className="absolute left-[2%] top-[8%] hidden rotate-[-12deg] rounded-[18px] opacity-[0.12] md:block"
                   />
                   <Image
-                    src="/products/mop-flash.svg"
+                    src="/hero/smart-tv-room.jpg"
                     alt=""
                     width={210}
                     height={210}
                     aria-hidden="true"
-                    className="absolute right-[4%] top-[30%] hidden rotate-[10deg] opacity-[0.1] md:block"
+                    className="absolute right-[4%] top-[30%] hidden rotate-[10deg] rounded-[18px] opacity-[0.1] md:block"
                   />
                   <Image
-                    src="/products/chapinha.svg"
+                    src="/hero/microondas-embutido.jpg"
                     alt=""
                     width={170}
                     height={170}
                     aria-hidden="true"
-                    className="absolute bottom-[8%] left-[10%] hidden rotate-[-18deg] opacity-[0.08] md:block"
+                    className="absolute bottom-[8%] left-[10%] hidden rotate-[-18deg] rounded-[18px] opacity-[0.08] md:block"
                   />
                 </div>
                 <Image
@@ -289,9 +289,9 @@ export default function HomePage() {
                     <Image
                       src={product.image}
                       alt={product.title}
-                      width={120}
+                      width={160}
                       height={120}
-                      className="mx-auto h-[88px] w-auto object-contain"
+                      className="mx-auto h-[88px] w-full rounded-[12px] object-cover"
                     />
                   </div>
                   <div className="mt-3 text-sm font-bold text-white">{product.title}</div>
@@ -398,14 +398,14 @@ export default function HomePage() {
             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
               <div className="max-w-[720px]">
                 <p className="text-sm font-black uppercase tracking-[0.18em] text-[#ffcf48]">
-                  CTA principal
+                  Entre agora
                 </p>
                 <h2 className="section-title mt-4 text-[36px] font-black leading-[1.04] tracking-[-0.05em] text-white md:text-[54px]">
-                  Coloque o Magazine Gerrayd no centro da sua captacao.
+                  Receba ofertas, cupons e oportunidades em um so lugar.
                 </h2>
                 <p className="mt-4 text-[16px] leading-8 text-[#a8bddf]">
-                  Uma landing page pensada para apresentar a marca com mais valor
-                  percebido e direcionar o publico para o grupo oficial.
+                  Entre no grupo oficial do Magazine Gerrayd e acompanhe selecoes,
+                  avisos e achadinhos de lojas conhecidas com mais praticidade.
                 </p>
               </div>
 
