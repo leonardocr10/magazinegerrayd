@@ -37,7 +37,7 @@ export function StoreHeader({
   showDomainBubble = false,
 }: StoreHeaderProps) {
   const whatsappGroupUrl =
-    "https://chat.whatsapp.com/Kh6OdjRatwO8xiE12GJTYf?s=sw&p=a&mlu=4";
+    "https://achadinho.pro/magazinegerrayd";
 
   return (
     <header className="sticky top-0 z-40 border-b border-brand-line/70 bg-white/95 backdrop-blur-xl">

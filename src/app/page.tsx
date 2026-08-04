@@ -17,7 +17,7 @@ import {
 import { PartnerCard } from "@/components/store/partner-card";
 
 const whatsappGroupUrl =
-  "https://chat.whatsapp.com/Kh6OdjRatwO8xiE12GJTYf?s=sw&p=a&mlu=4";
+  "https://achadinho.pro/magazinegerrayd";
 
 const highlights = [
   "Ofertas selecionadas com leitura rapida",
