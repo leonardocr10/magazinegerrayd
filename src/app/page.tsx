@@ -79,6 +79,36 @@ const trustItems = [
   },
 ];
 
+const heroProducts = [
+  {
+    title: "Air Fryer Mondial",
+    price: "R$ 299,90",
+    badge: "-18%",
+    image: "/products/air-fryer.svg",
+    position:
+      "left-[-10px] top-[26px] md:left-[-24px] md:top-[40px] lg:left-[-54px]",
+    cardTone: "from-[#0d1e3e] to-[#122f63]",
+  },
+  {
+    title: "Mop Flash Limp",
+    price: "R$ 169,90",
+    badge: "-15%",
+    image: "/products/mop-flash.svg",
+    position:
+      "right-[-10px] top-[120px] md:right-[-28px] md:top-[148px] lg:right-[-54px]",
+    cardTone: "from-[#0e213f] to-[#0f3d5d]",
+  },
+  {
+    title: "Chapinha Philco",
+    price: "R$ 119,90",
+    badge: "-20%",
+    image: "/products/chapinha.svg",
+    position:
+      "left-[16px] bottom-[18px] md:left-[22px] md:bottom-[30px] lg:left-[-6px]",
+    cardTone: "from-[#101d37] to-[#3a2347]",
+  },
+];
+
 export default function HomePage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#071227] text-white">
@@ -206,15 +236,73 @@ export default function HomePage() {
 
               <div className="relative overflow-hidden rounded-[36px] border border-[#274f92] bg-[radial-gradient(circle_at_top,rgba(47,140,255,0.18),transparent_28%),linear-gradient(145deg,#0b2451_0%,#0a1d3f_58%,#09162d_100%)] px-6 pt-6 shadow-[0_24px_70px_rgba(0,0,0,0.28)] md:px-8 md:pt-8">
                 <div className="absolute left-0 top-0 h-24 w-24 rounded-br-[40px] bg-[linear-gradient(180deg,rgba(255,207,72,0.34),rgba(255,207,72,0.02))]" />
+                <div className="pointer-events-none absolute inset-0">
+                  <div className="absolute left-[18%] top-[14%] h-28 w-28 rounded-full border border-white/8 bg-white/4 blur-[2px]" />
+                  <div className="absolute right-[14%] top-[8%] h-36 w-36 rounded-full border border-[#66bfff]/10 bg-[#66bfff]/6 blur-[2px]" />
+                  <div className="absolute bottom-[10%] right-[12%] h-24 w-24 rounded-full border border-[#ffcf48]/10 bg-[#ffcf48]/6 blur-[2px]" />
+                  <Image
+                    src="/products/air-fryer.svg"
+                    alt=""
+                    width={190}
+                    height={190}
+                    aria-hidden="true"
+                    className="absolute left-[2%] top-[8%] hidden rotate-[-12deg] opacity-[0.12] md:block"
+                  />
+                  <Image
+                    src="/products/mop-flash.svg"
+                    alt=""
+                    width={210}
+                    height={210}
+                    aria-hidden="true"
+                    className="absolute right-[4%] top-[30%] hidden rotate-[10deg] opacity-[0.1] md:block"
+                  />
+                  <Image
+                    src="/products/chapinha.svg"
+                    alt=""
+                    width={170}
+                    height={170}
+                    aria-hidden="true"
+                    className="absolute bottom-[8%] left-[10%] hidden rotate-[-18deg] opacity-[0.08] md:block"
+                  />
+                </div>
                 <Image
                   src="/brand/gerrayd-character.png"
                   alt="Personagem do Magazine Gerrayd"
                   width={1024}
                   height={1536}
                   priority
-                  className="mx-auto h-auto w-full max-w-[360px] object-contain object-bottom drop-shadow-[0_22px_42px_rgba(0,0,0,0.34)]"
+                  className="relative z-10 mx-auto h-auto w-full max-w-[360px] object-contain object-bottom drop-shadow-[0_22px_42px_rgba(0,0,0,0.34)]"
                 />
               </div>
+
+              {heroProducts.map((product) => (
+                <div
+                  key={product.title}
+                  className={`absolute z-20 hidden w-[178px] rounded-[22px] border border-white/10 bg-[linear-gradient(180deg,rgba(7,18,39,0.94)_0%,rgba(9,24,49,0.94)_100%)] p-3 shadow-[0_16px_40px_rgba(0,0,0,0.28)] backdrop-blur md:block ${product.position}`}
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <span className="rounded-full bg-[#ff7a1a] px-2.5 py-1 text-[10px] font-black text-white">
+                      {product.badge}
+                    </span>
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#9bc1ff]">
+                      Oferta
+                    </span>
+                  </div>
+                  <div
+                    className={`mt-3 rounded-[18px] bg-gradient-to-br ${product.cardTone} p-3`}
+                  >
+                    <Image
+                      src={product.image}
+                      alt={product.title}
+                      width={120}
+                      height={120}
+                      className="mx-auto h-[88px] w-auto object-contain"
+                    />
+                  </div>
+                  <div className="mt-3 text-sm font-bold text-white">{product.title}</div>
+                  <div className="mt-1 text-base font-black text-[#ffcf48]">{product.price}</div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
