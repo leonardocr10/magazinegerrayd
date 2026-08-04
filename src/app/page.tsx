@@ -2,117 +2,83 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   IconArrowRight,
-  IconBadge,
-  IconBellRinging,
   IconBrandWhatsapp,
+  IconCheck,
   IconClockBolt,
-  IconCreditCard,
-  IconGift,
-  IconLockCheck,
-  IconSearch,
+  IconDiscount2,
   IconShieldCheck,
-  IconSparkles,
-  IconTruckDelivery,
 } from "@tabler/icons-react";
 import { PartnerCard } from "@/components/store/partner-card";
 
-const whatsappGroupUrl =
-  "https://achadinho.pro/magazinegerrayd";
+const whatsappGroupUrl = "https://achadinho.pro/magazinegerrayd";
 
-const highlights = [
-  "Ofertas selecionadas com leitura rapida",
-  "Links para lojas conhecidas e confiaveis",
-  "Grupo com avisos e oportunidades recorrentes",
+const quickPoints = [
+  "Ofertas e cupons de lojas conhecidas",
+  "Achadinhos para casa, cozinha e tecnologia",
+  "Avisos frequentes para voce acompanhar com praticidade",
 ];
 
-const benefitCards = [
+const showcaseProducts = [
   {
-    title: "Curadoria mais clara",
-    text: "Voce nao perde tempo com excesso de informacao. A vitrine foca no que vale abrir e acompanhar.",
-    icon: IconSearch,
+    title: "Eletros para cozinha",
+    subtitle: "Geladeira, fogao e praticidade no dia a dia",
+    image: "/hero/cozinha-appliances.jpg",
+    accent: "bg-[#0f346f]",
   },
   {
-    title: "Compra mais segura",
-    text: "A comunicacao prioriza lojas conhecidas, leitura objetiva e orientacao para comprar com mais confianca.",
+    title: "Smart TV para sala",
+    subtitle: "Opcoes para entretenimento e conforto",
+    image: "/hero/smart-tv-room.jpg",
+    accent: "bg-[#123a5d]",
+  },
+  {
+    title: "Micro-ondas embutido",
+    subtitle: "Mais rapidez para sua rotina",
+    image: "/hero/microondas-embutido.jpg",
+    accent: "bg-[#3c284a]",
+  },
+];
+
+const benefits = [
+  {
+    title: "Selecao mais objetiva",
+    text: "Voce bate o olho e entende com mais facilidade o que vale acompanhar.",
+    icon: IconDiscount2,
+  },
+  {
+    title: "Mais confianca",
+    text: "As ofertas aparecem com foco em lojas conhecidas e oportunidades mais claras.",
     icon: IconShieldCheck,
   },
   {
-    title: "Alertas mais rapidos",
-    text: "O grupo ajuda a acompanhar oportunidades, descontos e avisos de produtos que podem acabar rapido.",
-    icon: IconBellRinging,
+    title: "Mais agilidade",
+    text: "Entre no grupo oficial e acompanhe novidades sem precisar procurar em varios lugares.",
+    icon: IconClockBolt,
   },
 ];
 
 const steps = [
   {
+    number: "01",
     title: "Entre no grupo",
-    text: "Acesse o canal oficial para receber os avisos e acompanhar as oportunidades selecionadas.",
-    icon: IconBrandWhatsapp,
+    text: "Acompanhe avisos, cupons e ofertas atualizadas.",
   },
   {
-    title: "Veja o destaque do dia",
-    text: "As melhores oportunidades ficam mais faceis de identificar, com visual direto e leitura leve.",
-    icon: IconSparkles,
+    number: "02",
+    title: "Veja os destaques",
+    text: "Compare oportunidades para casa, cozinha e tecnologia.",
   },
   {
-    title: "Abra o parceiro",
-    text: "Quando fizer sentido, voce segue para a loja parceira e finaliza a compra no ambiente oficial.",
-    icon: IconLockCheck,
-  },
-];
-
-const trustItems = [
-  {
-    title: "Lojas conhecidas",
-    text: "Amazon, Shopee, Mercado Livre e Magalu aparecem como referencias visuais da proposta.",
-    icon: IconBadge,
-  },
-  {
-    title: "Leitura objetiva",
-    text: "Layout pensado para o cliente entender a proposta em poucos segundos.",
-    icon: IconClockBolt,
-  },
-  {
-    title: "Economia e praticidade",
-    text: "Foco em promocoes, cupons, frete, retirada e percepcao de valor antes da compra.",
-    icon: IconTruckDelivery,
-  },
-];
-
-const heroProducts = [
-  {
-    title: "Cozinha planejada",
-    price: "Eletros em destaque",
-    badge: "COZINHA",
-    image: "/hero/cozinha-appliances.jpg",
-    position:
-      "left-[-10px] top-[26px] md:left-[-24px] md:top-[40px] lg:left-[-54px]",
-    cardTone: "from-[#0d1e3e] to-[#122f63]",
-  },
-  {
-    title: "Smart TV para sala",
-    price: "Ofertas para sua casa",
-    badge: "TV",
-    image: "/hero/smart-tv-room.jpg",
-    position:
-      "right-[-10px] top-[120px] md:right-[-28px] md:top-[148px] lg:right-[-54px]",
-    cardTone: "from-[#0e213f] to-[#0f3d5d]",
-  },
-  {
-    title: "Micro-ondas embutido",
-    price: "Mais praticidade",
-    badge: "MICRO",
-    image: "/hero/microondas-embutido.jpg",
-    position:
-      "left-[16px] bottom-[18px] md:left-[22px] md:bottom-[30px] lg:left-[-6px]",
-    cardTone: "from-[#101d37] to-[#3a2347]",
+    number: "03",
+    title: "Aproveite quando fizer sentido",
+    text: "Abra a loja parceira e finalize sua compra com mais praticidade.",
   },
 ];
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#071227] text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(31,120,255,0.18),transparent_30%),radial-gradient(circle_at_center_right,rgba(0,205,255,0.12),transparent_24%),radial-gradient(circle_at_bottom_left,rgba(255,192,54,0.08),transparent_26%),linear-gradient(180deg,#071227_0%,#08152a_46%,#08111d_100%)]" />
+    <main className="min-h-screen overflow-hidden bg-[#071222] text-white">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(35,117,255,0.18),transparent_24%),radial-gradient(circle_at_top_right,rgba(0,204,255,0.10),transparent_18%),linear-gradient(180deg,#071222_0%,#08172c_54%,#09111d_100%)]" />
 
       <div className="relative">
         <header className="border-b border-white/8">
@@ -124,14 +90,14 @@ export default function HomePage() {
                 width={1079}
                 height={1079}
                 priority
-                className="h-[72px] w-[72px] rounded-[18px] border border-white/10 object-cover shadow-[0_14px_30px_rgba(0,0,0,0.28)] md:h-[86px] md:w-[86px]"
+                className="h-[70px] w-[70px] rounded-[18px] border border-white/10 object-cover shadow-[0_14px_30px_rgba(0,0,0,0.28)] md:h-[82px] md:w-[82px]"
               />
               <div className="hidden md:block">
-                <div className="text-sm font-semibold uppercase tracking-[0.18em] text-[#7eb6ff]">
+                <div className="text-sm font-semibold uppercase tracking-[0.16em] text-[#8ebdff]">
                   Magazine Gerrayd
                 </div>
-                <div className="mt-1 text-sm text-[#a8bddf]">
-                  Ofertas selecionadas para comprar melhor
+                <div className="mt-1 text-sm text-[#9fb4d3]">
+                  Achadinhos, cupons e oportunidades
                 </div>
               </div>
             </Link>
@@ -140,47 +106,39 @@ export default function HomePage() {
               href={whatsappGroupUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[linear-gradient(90deg,#17d868_0%,#33e6b9_100%)] px-5 py-3 text-sm font-black uppercase tracking-[0.05em] text-[#051d10] shadow-[0_10px_30px_rgba(23,216,104,0.22)]"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[linear-gradient(90deg,#18d96a_0%,#37e5bc_100%)] px-5 py-3 text-sm font-black uppercase tracking-[0.05em] text-[#051d10] shadow-[0_10px_28px_rgba(23,216,104,0.18)]"
             >
-              <IconBrandWhatsapp size={20} stroke={2.3} />
+              <IconBrandWhatsapp size={20} stroke={2.2} />
               Entrar no grupo
             </Link>
           </div>
         </header>
 
-        <section className="w-full px-5 pb-14 pt-8 md:px-8 md:pb-20 md:pt-12 xl:px-12 2xl:px-16">
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.12fr)_minmax(420px,0.88fr)] lg:items-center xl:gap-14">
-            <div className="max-w-[820px]">
-              <h1 className="section-title text-[40px] font-black leading-[0.98] tracking-[-0.06em] text-white md:text-[68px] xl:text-[78px]">
-                Promocoes, cupons e
-                <span className="block bg-[linear-gradient(90deg,#ffffff_0%,#8cc7ff_42%,#39deff_100%)] bg-clip-text text-transparent">
-                  oportunidades em um so lugar
+        <section className="w-full px-5 pb-14 pt-8 md:px-8 md:pb-18 md:pt-12 xl:px-12 2xl:px-16">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.94fr)_minmax(430px,0.96fr)] lg:items-center xl:gap-16">
+            <div className="max-w-[760px]">
+              <div className="inline-flex items-center rounded-full border border-[#1e4682] bg-[#0a1a34] px-4 py-2 text-sm font-semibold text-[#9cc4ff]">
+                Atualizado com ofertas e cupons
+              </div>
+
+              <h1 className="section-title mt-6 text-[42px] font-black leading-[0.98] tracking-[-0.06em] text-white md:text-[66px] xl:text-[78px]">
+                Achadinhos para casa,
+                <span className="block bg-[linear-gradient(90deg,#ffffff_0%,#8fc8ff_44%,#43deff_100%)] bg-clip-text text-transparent">
+                  cozinha e tecnologia em um so lugar
                 </span>
               </h1>
 
-              <p className="mt-5 max-w-[720px] text-[17px] leading-8 text-[#a8bddf] md:text-[19px] xl:text-[20px]">
-                Acompanhe ofertas, cupons e achadinhos selecionados para ajudar voce
-                a economizar em produtos de lojas conhecidas, com mais praticidade no
-                dia a dia.
+              <p className="mt-5 max-w-[690px] text-[17px] leading-8 text-[#a9bcda] md:text-[19px] xl:text-[20px]">
+                Acompanhe ofertas, cupons e oportunidades de lojas conhecidas para
+                economizar com mais praticidade no dia a dia.
               </p>
-
-              <div className="mt-7 flex flex-wrap gap-3">
-                {highlights.map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-full border border-[#214479] bg-[#0b1a34]/90 px-4 py-2 text-sm font-medium text-[#dce8ff]"
-                  >
-                    {item}
-                  </div>
-                ))}
-              </div>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Link
                   href={whatsappGroupUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-3 rounded-[18px] bg-[linear-gradient(90deg,#155dff_0%,#24bbff_100%)] px-7 py-4 text-[15px] font-black uppercase tracking-[0.05em] text-white shadow-[0_18px_40px_rgba(21,93,255,0.24)]"
+                  className="inline-flex items-center justify-center gap-3 rounded-[18px] bg-[linear-gradient(90deg,#1661ff_0%,#2abaff_100%)] px-7 py-4 text-[15px] font-black uppercase tracking-[0.05em] text-white shadow-[0_18px_36px_rgba(21,93,255,0.20)]"
                 >
                   Receber ofertas agora
                   <IconArrowRight size={19} />
@@ -188,213 +146,165 @@ export default function HomePage() {
 
                 <a
                   href="#parceiros"
-                  className="inline-flex items-center justify-center rounded-[18px] border border-[#274b88] bg-[#0b1c38]/80 px-7 py-4 text-[15px] font-bold text-[#d7e4ff]"
+                  className="inline-flex items-center justify-center rounded-[18px] border border-[#24457a] bg-white/5 px-7 py-4 text-[15px] font-bold text-[#d8e6ff]"
                 >
-                  Ver parceiros
+                  Ver lojas
                 </a>
               </div>
 
-              <div className="mt-8 grid gap-4 md:grid-cols-3 xl:max-w-[920px]">
-                <div className="rounded-[24px] border border-[#1a3663] bg-[#09182f]/88 p-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#12356a] text-[#ffcf48]">
-                    <IconGift size={24} />
+              <div className="mt-8 grid gap-3 sm:grid-cols-1 lg:max-w-[680px]">
+                {quickPoints.map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-start gap-3 rounded-[18px] border border-white/8 bg-white/4 px-4 py-3 text-sm text-[#d8e5fb]"
+                  >
+                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#12356a] text-[#8fc8ff]">
+                      <IconCheck size={14} stroke={2.6} />
+                    </span>
+                    <span>{item}</span>
                   </div>
-                  <div className="mt-4 text-lg font-black text-white">Ofertas relevantes</div>
-                  <div className="mt-2 text-sm leading-7 text-[#a8bddf]">
-                    Menos ruido e mais foco no que chama atencao de verdade.
-                  </div>
-                </div>
-                <div className="rounded-[24px] border border-[#1a3663] bg-[#09182f]/88 p-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#12356a] text-[#ffcf48]">
-                    <IconCreditCard size={24} />
-                  </div>
-                  <div className="mt-4 text-lg font-black text-white">Compra orientada</div>
-                  <div className="mt-2 text-sm leading-7 text-[#a8bddf]">
-                    Comunicacao feita para reduzir duvida e facilitar a decisao.
-                  </div>
-                </div>
-                <div className="rounded-[24px] border border-[#1a3663] bg-[#09182f]/88 p-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#12356a] text-[#ffcf48]">
-                    <IconLockCheck size={24} />
-                  </div>
-                  <div className="mt-4 text-lg font-black text-white">Parceiros fortes</div>
-                  <div className="mt-2 text-sm leading-7 text-[#a8bddf]">
-                    Visual alinhado com marketplaces conhecidos pelo publico.
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
-            <div className="relative min-h-[620px]">
-              <div className="absolute left-10 top-10 h-44 w-44 rounded-full bg-[#1585ff]/18 blur-3xl" />
-              <div className="absolute bottom-8 right-10 h-40 w-40 rounded-full bg-[#2be1ff]/14 blur-3xl" />
+            <div className="relative">
+              <div className="absolute left-6 top-12 h-40 w-40 rounded-full bg-[#1c6dff]/16 blur-3xl" />
+              <div className="absolute bottom-12 right-8 h-36 w-36 rounded-full bg-[#27d4ff]/12 blur-3xl" />
 
-              <div className="relative overflow-hidden rounded-[36px] border border-[#274f92] bg-[radial-gradient(circle_at_top,rgba(47,140,255,0.18),transparent_28%),linear-gradient(145deg,#0b2451_0%,#0a1d3f_58%,#09162d_100%)] px-6 pt-6 shadow-[0_24px_70px_rgba(0,0,0,0.28)] md:px-8 md:pt-8 xl:min-h-[620px]">
-                <div className="absolute left-0 top-0 h-24 w-24 rounded-br-[40px] bg-[linear-gradient(180deg,rgba(255,207,72,0.34),rgba(255,207,72,0.02))]" />
-                <div className="pointer-events-none absolute inset-0">
-                  <div className="absolute left-[18%] top-[14%] h-28 w-28 rounded-full border border-white/8 bg-white/4 blur-[2px]" />
-                  <div className="absolute right-[14%] top-[8%] h-36 w-36 rounded-full border border-[#66bfff]/10 bg-[#66bfff]/6 blur-[2px]" />
-                  <div className="absolute bottom-[10%] right-[12%] h-24 w-24 rounded-full border border-[#ffcf48]/10 bg-[#ffcf48]/6 blur-[2px]" />
-                  <Image
-                    src="/hero/cozinha-appliances.jpg"
-                    alt=""
-                    width={190}
-                    height={190}
-                    aria-hidden="true"
-                    className="absolute left-[2%] top-[8%] hidden rotate-[-12deg] rounded-[18px] opacity-[0.12] md:block"
-                  />
-                  <Image
-                    src="/hero/smart-tv-room.jpg"
-                    alt=""
-                    width={210}
-                    height={210}
-                    aria-hidden="true"
-                    className="absolute right-[4%] top-[30%] hidden rotate-[10deg] rounded-[18px] opacity-[0.1] md:block"
-                  />
-                  <Image
-                    src="/hero/microondas-embutido.jpg"
-                    alt=""
-                    width={170}
-                    height={170}
-                    aria-hidden="true"
-                    className="absolute bottom-[8%] left-[10%] hidden rotate-[-18deg] rounded-[18px] opacity-[0.08] md:block"
-                  />
-                </div>
-                <Image
-                  src="/brand/gerrayd-character.png"
-                  alt="Personagem do Magazine Gerrayd"
-                  width={1024}
-                  height={1536}
-                  priority
-                  className="relative z-10 mx-auto h-auto w-full max-w-[400px] object-contain object-bottom drop-shadow-[0_22px_42px_rgba(0,0,0,0.34)] xl:max-w-[460px]"
-                />
-              </div>
-
-              {heroProducts.map((product) => (
-                <div
-                  key={product.title}
-                  className={`absolute z-20 hidden w-[178px] rounded-[22px] border border-white/10 bg-[linear-gradient(180deg,rgba(7,18,39,0.94)_0%,rgba(9,24,49,0.94)_100%)] p-3 shadow-[0_16px_40px_rgba(0,0,0,0.28)] backdrop-blur md:block ${product.position}`}
-                >
-                  <div className="flex items-start justify-between gap-2">
-                    <span className="rounded-full bg-[#ff7a1a] px-2.5 py-1 text-[10px] font-black text-white">
-                      {product.badge}
-                    </span>
-                    <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#9bc1ff]">
-                      Oferta
-                    </span>
+              <div className="overflow-hidden rounded-[36px] border border-[#264a82] bg-[linear-gradient(145deg,#0b2147_0%,#0a1731_62%,#09121f_100%)] p-5 shadow-[0_24px_70px_rgba(0,0,0,0.24)] md:p-6">
+                <div className="grid gap-5 xl:grid-cols-[0.88fr_1.12fr]">
+                  <div className="grid gap-4">
+                    {showcaseProducts.map((product) => (
+                      <article
+                        key={product.title}
+                        className="overflow-hidden rounded-[24px] border border-white/8 bg-white/5"
+                      >
+                        <div className="relative h-[170px] overflow-hidden">
+                          <Image
+                            src={product.image}
+                            alt={product.title}
+                            fill
+                            className="object-cover"
+                          />
+                          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,15,31,0.05)_0%,rgba(6,15,31,0.62)_100%)]" />
+                          <div className="absolute left-3 top-3 rounded-full bg-[#ff7a1a] px-2.5 py-1 text-[10px] font-black uppercase text-white">
+                            Destaque
+                          </div>
+                        </div>
+                        <div className="p-4">
+                          <div className={`inline-flex rounded-full ${product.accent} px-3 py-1 text-[10px] font-black uppercase tracking-[0.12em] text-white`}>
+                            Oferta
+                          </div>
+                          <h2 className="mt-3 text-[18px] font-black text-white">{product.title}</h2>
+                          <p className="mt-2 text-sm leading-6 text-[#a9bcda]">{product.subtitle}</p>
+                        </div>
+                      </article>
+                    ))}
                   </div>
-                  <div
-                    className={`mt-3 rounded-[18px] bg-gradient-to-br ${product.cardTone} p-3`}
-                  >
+
+                  <div className="relative overflow-hidden rounded-[28px] border border-white/8 bg-[radial-gradient(circle_at_top,rgba(52,143,255,0.18),transparent_28%),linear-gradient(180deg,#0d2550_0%,#0a1730_100%)] px-5 pt-5">
+                    <div className="absolute left-0 top-0 h-24 w-24 rounded-br-[36px] bg-[linear-gradient(180deg,rgba(255,207,72,0.32),rgba(255,207,72,0.02))]" />
+                    <div className="relative z-10 max-w-[280px]">
+                      <div className="rounded-full border border-[#305ea0] bg-[#0d2347]/90 px-4 py-2 text-sm font-semibold text-[#9ec7ff]">
+                        Achados todos os dias
+                      </div>
+                      <h2 className="mt-5 text-[30px] font-black leading-tight text-white md:text-[38px]">
+                        Mais praticidade para encontrar oportunidades em lojas conhecidas
+                      </h2>
+                      <p className="mt-4 text-sm leading-7 text-[#a9bcda] md:text-[15px]">
+                        Acompanhe novidades para sua casa, sua rotina e seu bolso com mais clareza.
+                      </p>
+                    </div>
                     <Image
-                      src={product.image}
-                      alt={product.title}
-                      width={160}
-                      height={120}
-                      className="mx-auto h-[88px] w-full rounded-[12px] object-cover"
+                      src="/brand/gerrayd-character.png"
+                      alt="Personagem do Magazine Gerrayd"
+                      width={1024}
+                      height={1536}
+                      priority
+                      className="relative z-10 ml-auto mt-6 h-auto w-full max-w-[360px] object-contain object-bottom drop-shadow-[0_20px_38px_rgba(0,0,0,0.34)]"
                     />
                   </div>
-                  <div className="mt-3 text-sm font-bold text-white">{product.title}</div>
-                  <div className="mt-1 text-base font-black text-[#ffcf48]">{product.price}</div>
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
-        </section>
-
-        <section className="w-full px-5 pb-8 md:px-8 md:pb-12 xl:px-12 2xl:px-16">
-          <div className="grid gap-4 lg:grid-cols-3">
-            {benefitCards.map(({ title, text, icon: Icon }) => (
-              <article
-                key={title}
-                className="rounded-[28px] border border-[#18335f] bg-[linear-gradient(180deg,rgba(9,23,48,0.94)_0%,rgba(8,18,35,0.98)_100%)] p-6 shadow-[0_14px_34px_rgba(0,0,0,0.16)]"
-              >
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[linear-gradient(180deg,#1657da_0%,#103f9f_100%)] text-[#ffcf48] shadow-[0_10px_24px_rgba(22,87,218,0.2)]">
-                  <Icon size={26} stroke={2.1} />
-                </div>
-                <h2 className="mt-5 text-[24px] font-black text-white">{title}</h2>
-                <p className="mt-3 text-[15px] leading-7 text-[#a8bddf]">{text}</p>
-              </article>
-            ))}
           </div>
         </section>
 
         <section
           id="parceiros"
-          className="w-full px-5 pb-8 pt-4 md:px-8 md:pb-14 xl:px-12 2xl:px-16"
+          className="w-full px-5 pb-10 md:px-8 md:pb-14 xl:px-12 2xl:px-16"
         >
-          <div className="mb-6 max-w-[760px]">
-            <p className="text-sm font-black uppercase tracking-[0.18em] text-[#37deff]">
-              Parceiros visuais
-            </p>
-            <h2 className="section-title mt-2 text-[32px] font-black tracking-[-0.04em] text-white md:text-[46px]">
-              A pagina comunica o projeto com marcas conhecidas pelo publico
-            </h2>
-            <p className="mt-4 text-[16px] leading-8 text-[#a8bddf]">
-              A proposta da landing e apresentar o Magazine Gerrayd com cara de marca
-              forte, visual profissional e CTA direto para o grupo.
-            </p>
-          </div>
+          <div className="rounded-[30px] border border-white/8 bg-white/[0.04] p-5 md:p-6">
+            <div className="mb-6 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+              <div className="max-w-[720px]">
+                <p className="text-sm font-black uppercase tracking-[0.16em] text-[#43deff]">
+                  Lojas em destaque
+                </p>
+                <h2 className="section-title mt-2 text-[28px] font-black tracking-[-0.04em] text-white md:text-[40px]">
+                  Acompanhe oportunidades de lojas conhecidas com mais confianca
+                </h2>
+              </div>
+              <div className="text-sm text-[#9fb4d3]">
+                Amazon, Shopee, Mercado Livre e Magalu
+              </div>
+            </div>
 
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            <PartnerCard partner="magalu" subtitle="Ofertas selecionadas" />
-            <PartnerCard partner="shopee" subtitle="Cupons e promocoes" />
-            <PartnerCard partner="mercado-livre" subtitle="Achados com entrega rapida" />
-            <PartnerCard partner="amazon" subtitle="Produtos populares e confiaveis" />
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+              <PartnerCard partner="magalu" subtitle="Ofertas selecionadas" />
+              <PartnerCard partner="shopee" subtitle="Cupons e promocoes" />
+              <PartnerCard partner="mercado-livre" subtitle="Achados com entrega rapida" />
+              <PartnerCard partner="amazon" subtitle="Produtos populares e confiaveis" />
+            </div>
           </div>
         </section>
 
-        <section className="w-full px-5 pb-8 md:px-8 md:pb-14 xl:px-12 2xl:px-16">
-          <div className="rounded-[34px] border border-[#1d3f74] bg-[linear-gradient(135deg,#0b1d3c_0%,#0a1730_100%)] px-6 py-8 md:px-8 md:py-10">
-            <div className="max-w-[740px]">
-              <p className="text-sm font-black uppercase tracking-[0.18em] text-[#ffcf48]">
+        <section className="w-full px-5 pb-10 md:px-8 md:pb-14 xl:px-12 2xl:px-16">
+          <div className="grid gap-4 lg:grid-cols-3">
+            {benefits.map(({ title, text, icon: Icon }) => (
+              <article
+                key={title}
+                className="rounded-[28px] border border-white/8 bg-white/[0.04] p-6"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#103567] text-[#ffcf48]">
+                  <Icon size={24} stroke={2.1} />
+                </div>
+                <h2 className="mt-5 text-[22px] font-black text-white">{title}</h2>
+                <p className="mt-3 text-[15px] leading-7 text-[#a9bcda]">{text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="w-full px-5 pb-10 md:px-8 md:pb-14 xl:px-12 2xl:px-16">
+          <div className="rounded-[34px] border border-[#1e467f] bg-[linear-gradient(135deg,#0b1c39_0%,#0a1730_100%)] p-6 md:p-8">
+            <div className="max-w-[760px]">
+              <p className="text-sm font-black uppercase tracking-[0.16em] text-[#ffcf48]">
                 Como funciona
               </p>
-              <h2 className="section-title mt-3 text-[32px] font-black tracking-[-0.04em] text-white md:text-[44px]">
-                Um fluxo simples para levar o visitante da descoberta ate a acao
+              <h2 className="section-title mt-3 text-[30px] font-black tracking-[-0.04em] text-white md:text-[42px]">
+                Veja como acompanhar ofertas e aproveitar oportunidades com mais facilidade
               </h2>
             </div>
 
             <div className="mt-8 grid gap-4 lg:grid-cols-3">
-              {steps.map(({ title, text, icon: Icon }) => (
+              {steps.map((step) => (
                 <article
-                  key={title}
-                  className="rounded-[26px] border border-[#234575] bg-[#0a1a34]/90 p-5"
+                  key={step.number}
+                  className="rounded-[26px] border border-white/8 bg-white/[0.04] p-5"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#12356a] text-[#6fd2ff]">
-                    <Icon size={24} />
+                  <div className="text-[13px] font-black uppercase tracking-[0.18em] text-[#43deff]">
+                    {step.number}
                   </div>
-                  <h3 className="mt-4 text-[22px] font-black text-white">{title}</h3>
-                  <p className="mt-2 text-sm leading-7 text-[#a8bddf]">{text}</p>
+                  <h3 className="mt-3 text-[22px] font-black text-white">{step.title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-[#a9bcda]">{step.text}</p>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="w-full px-5 pb-8 md:px-8 md:pb-14 xl:px-12 2xl:px-16">
-          <div className="grid gap-4 lg:grid-cols-3">
-            {trustItems.map(({ title, text, icon: Icon }) => (
-              <article
-                key={title}
-                className="rounded-[26px] border border-[#18335f] bg-[#09172c]/90 p-5"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#12356a] text-[#ffcf48]">
-                    <Icon size={24} />
-                  </div>
-                  <div>
-                    <h3 className="text-[22px] font-black text-white">{title}</h3>
-                    <p className="mt-2 text-sm leading-7 text-[#a8bddf]">{text}</p>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
         <section className="w-full px-5 pb-20 md:px-8 xl:px-12 2xl:px-16">
-          <div className="overflow-hidden rounded-[36px] border border-[#234b8f] bg-[linear-gradient(135deg,#0f2b5f_0%,#0b1830_44%,#081321_100%)] px-6 py-10 shadow-[0_24px_70px_rgba(0,0,0,0.22)] md:px-10 md:py-12">
+          <div className="rounded-[36px] border border-[#244d8d] bg-[linear-gradient(135deg,#0f2a5d_0%,#0b1830_44%,#081321_100%)] px-6 py-10 shadow-[0_24px_70px_rgba(0,0,0,0.20)] md:px-10 md:py-12">
             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
               <div className="max-w-[720px]">
                 <p className="text-sm font-black uppercase tracking-[0.18em] text-[#ffcf48]">
@@ -403,7 +313,7 @@ export default function HomePage() {
                 <h2 className="section-title mt-4 text-[36px] font-black leading-[1.04] tracking-[-0.05em] text-white md:text-[54px]">
                   Receba ofertas, cupons e oportunidades em um so lugar.
                 </h2>
-                <p className="mt-4 text-[16px] leading-8 text-[#a8bddf]">
+                <p className="mt-4 text-[16px] leading-8 text-[#a9bcda]">
                   Entre no grupo oficial do Magazine Gerrayd e acompanhe selecoes,
                   avisos e achadinhos de lojas conhecidas com mais praticidade.
                 </p>
@@ -413,7 +323,7 @@ export default function HomePage() {
                 href={whatsappGroupUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-3 rounded-[18px] bg-[linear-gradient(90deg,#17d868_0%,#33e6b9_100%)] px-7 py-5 text-[15px] font-black uppercase tracking-[0.05em] text-[#051d10] shadow-[0_16px_34px_rgba(23,216,104,0.2)]"
+                className="inline-flex items-center justify-center gap-3 rounded-[18px] bg-[linear-gradient(90deg,#18d96a_0%,#37e5bc_100%)] px-7 py-5 text-[15px] font-black uppercase tracking-[0.05em] text-[#051d10] shadow-[0_16px_34px_rgba(23,216,104,0.18)]"
               >
                 <IconBrandWhatsapp size={22} stroke={2.2} />
                 Entrar no grupo agora
