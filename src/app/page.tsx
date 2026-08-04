@@ -15,24 +15,24 @@ const whatsappGroupUrl = "https://achadinho.pro/magazinegerrayd";
 const quickPoints = [
   "Ofertas e cupons de lojas conhecidas",
   "Achadinhos para casa, cozinha e tecnologia",
-  "Avisos frequentes para voce acompanhar com praticidade",
+  "Avisos frequentes para você acompanhar com praticidade",
 ];
 
 const showcaseProducts = [
   {
     title: "Eletros para cozinha",
-    subtitle: "Geladeira, fogao e praticidade no dia a dia",
+    subtitle: "Geladeira, fogão e praticidade no dia a dia",
     image: "/hero/cozinha-appliances.jpg",
     accent: "bg-[#0f346f]",
   },
   {
     title: "Smart TV para sala",
-    subtitle: "Opcoes para entretenimento e conforto",
+    subtitle: "Opções para entretenimento e conforto",
     image: "/hero/smart-tv-room.jpg",
     accent: "bg-[#123a5d]",
   },
   {
-    title: "Sofa para sala",
+    title: "Sofá para sala",
     subtitle: "Mais conforto para o seu ambiente",
     image: "/hero/sofa-sala.jpg",
     accent: "bg-[#3c284a]",
@@ -41,18 +41,18 @@ const showcaseProducts = [
 
 const benefits = [
   {
-    title: "Selecao mais objetiva",
-    text: "Voce bate o olho e entende com mais facilidade o que vale acompanhar.",
+    title: "Seleção mais objetiva",
+    text: "Você bate o olho e entende com mais facilidade o que vale acompanhar.",
     icon: IconDiscount2,
   },
   {
-    title: "Mais confianca",
+    title: "Mais confiança",
     text: "As ofertas aparecem com foco em lojas conhecidas e oportunidades mais claras.",
     icon: IconShieldCheck,
   },
   {
-    title: "Mais agilidade",
-    text: "Entre no grupo oficial e acompanhe novidades sem precisar procurar em varios lugares.",
+    title: "Compra segura e suporte",
+    text: "Acompanhe oportunidades com mais confiança e conte com orientações para comprar com mais tranquilidade.",
     icon: IconClockBolt,
   },
 ];
@@ -124,7 +124,7 @@ export default function HomePage() {
               <h1 className="section-title mt-6 text-[42px] font-black leading-[0.98] tracking-[-0.06em] text-white md:text-[66px] xl:text-[78px]">
                 Achadinhos para casa,
                 <span className="block bg-[linear-gradient(90deg,#ffffff_0%,#8fc8ff_44%,#43deff_100%)] bg-clip-text text-transparent">
-                  cozinha e tecnologia em um so lugar
+                  cozinha e tecnologia em um só lugar
                 </span>
               </h1>
 
@@ -241,7 +241,7 @@ export default function HomePage() {
                   Lojas em destaque
                 </p>
                 <h2 className="section-title mt-2 text-[28px] font-black tracking-[-0.04em] text-white md:text-[40px]">
-                  Acompanhe oportunidades de lojas conhecidas com mais confianca
+                  Acompanhe oportunidades de lojas conhecidas com mais confiança
                 </h2>
               </div>
               <div className="text-sm text-[#9fb4d3]">
@@ -251,9 +251,9 @@ export default function HomePage() {
 
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               <PartnerCard partner="magalu" subtitle="Ofertas selecionadas" />
-              <PartnerCard partner="shopee" subtitle="Cupons e promocoes" />
-              <PartnerCard partner="mercado-livre" subtitle="Achados com entrega rapida" />
-              <PartnerCard partner="amazon" subtitle="Produtos populares e confiaveis" />
+              <PartnerCard partner="shopee" subtitle="Cupons e promoções" />
+              <PartnerCard partner="mercado-livre" subtitle="Achados com entrega rápida" />
+              <PartnerCard partner="amazon" subtitle="Produtos populares e confiáveis" />
             </div>
           </div>
         </section>
@@ -311,10 +311,10 @@ export default function HomePage() {
                   Entre agora
                 </p>
                 <h2 className="section-title mt-4 text-[36px] font-black leading-[1.04] tracking-[-0.05em] text-white md:text-[54px]">
-                  Receba ofertas, cupons e oportunidades em um so lugar.
+                  Receba ofertas, cupons e oportunidades em um só lugar.
                 </h2>
                 <p className="mt-4 text-[16px] leading-8 text-[#a9bcda]">
-                  Entre no grupo oficial do Magazine Gerrayd e acompanhe selecoes,
+                  Entre no grupo oficial do Magazine Gerrayd e acompanhe seleções,
                   avisos e achadinhos de lojas conhecidas com mais praticidade.
                 </p>
               </div>
