@@ -42,7 +42,7 @@ const partnerStores = [
     name: "Mercado Livre",
     description: "Achados com entrega rápida e segurança.",
     logo: "mercado-livre",
-    url: "https://www.mercadolivre.com.br/",
+    url: "https://meli.la/2sddrcy",
   },
   {
     name: "Amazon",
@@ -116,13 +116,13 @@ function HeaderBrand({ compact = false }: { compact?: boolean }) {
   return (
     <Link
       href="/"
-      className={`block shrink-0 overflow-visible ${compact ? "w-[170px]" : "w-[190px] md:w-[225px]"}`}
+      className={`block shrink-0 overflow-visible ${compact ? "w-[150px]" : "w-[170px] md:w-[195px]"}`}
     >
       <Image
-        src="/brand/gerrayd-logo-cropped.png"
+        src="/brand/gerrayd-logo-tight.png"
         alt="Magazine Gerrayd"
-        width={900}
-        height={340}
+        width={907}
+        height={297}
         priority={!compact}
         className="h-auto w-full max-w-none object-contain"
       />
