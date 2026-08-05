@@ -119,10 +119,10 @@ function HeaderBrand({ compact = false }: { compact?: boolean }) {
       className={`block shrink-0 overflow-visible ${compact ? "w-[170px]" : "w-[190px] md:w-[225px]"}`}
     >
       <Image
-        src="/brand/gerrayd-logo-user-cropped.png"
+        src="/brand/gerrayd-logo-cropped.png"
         alt="Magazine Gerrayd"
-        width={1220}
-        height={664}
+        width={900}
+        height={340}
         priority={!compact}
         className="h-auto w-full max-w-none object-contain"
       />
